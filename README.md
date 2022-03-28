@@ -2,8 +2,6 @@
 
 # Spiderweb
 
-## Logo
-<br />
 <div align="center">
     <img src="./img/logo1.png" alt="Logo">
 </div>
