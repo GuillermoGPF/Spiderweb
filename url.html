@@ -1,0 +1,501 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<title>Tools - URL</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+    	  rel="stylesheet" 
+    	  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+    	  crossorigin="anonymous">
+    <link rel="icon" type="text/css" href="">
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+    <script src="https://kit.fontawesome.com/81c2c05f29.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="dark pb-5">
+
+	<header class="container mt-2">
+		<h2 class="subtitle text-center mx-auto">
+			<i class="fas fa-globe"></i>&nbsp;URL
+		</h2>
+	</header>
+
+	<div class="container d-none d-md-flex">
+		<header id="header-pages">
+			<a href="inicio.html">
+				<i class="fas fa-home"></i>
+				<p>Inicio</p>
+			</a>
+
+			<a href="mensajes.html">
+				<i class="far fa-comments"></i>
+				<p>Mensajes</p>
+			</a>
+
+			<a href="subir.html">
+				<i class="fas fa-space-shuttle"></i>
+				<p>Lanzar</p>
+			</a>
+
+			<a href="perfil.html">
+				<div class="icon-photo">
+					<img src="img/logo.jpg">
+				</div>
+				<p>Perfil</p>
+			</a>
+
+			<a href="agenda.html">
+				<i class="fas fa-calendar-alt"></i>
+				<p>Agenda</p>
+			</a>
+
+			<a href="levelone.html">
+				<i class="fas fa-gamepad"></i>
+				<p>LevelOne</p>
+			</a>
+		
+			<a href="tools.html" class="activado">
+				<i class="fas fa-pencil-ruler"></i>
+				<p>Tools</p>
+			</a>
+	
+			<a href="mooney.html">
+				<i class="far fa-moon"></i>
+				<p>Mooney</p>
+			</a>
+
+			<a href="ajustes.html">
+				<i class="fas fa-cogs"></i>
+				<p>Ajustes</p>
+			</a>
+		</header>
+	</div>
+
+	<div class="page">
+		<div class="container pt-5 mx-auto text-center">
+			<div class="container">
+				<h5 class="subtitle">Introduce la dirección de la página que buscas</h5>
+				<!-- <img id="favicon"> -->
+				<input type="text" value="https://www." id="favicon-input">
+				<div class="url-controls">
+					<button class="btn" id="btn-url">
+						Abrir página
+					</button>
+					<button class="btn" onclick="generateNewQR()">
+						Crear código QR
+					</button>
+				</div>
+				<div id="qr-code" class="qr-code"></div>
+			</div>
+
+			<footer class="fixed-bottom d-flex d-md-none py-2">
+				<a href="inicio.html">
+					<i class="fas fa-home"></i>
+				</a>
+		
+				<a href="mensajes.html">
+					<i class="far fa-comments"></i>
+				</a>
+		
+				<a href="subir.html">
+					<i class="fas fa-space-shuttle"></i>
+				</a>
+		
+				<a href="perfil.html">
+					<div class="icon-photo-res">
+						<img src="img/logo.jpg">
+					</div>
+				</a>
+		
+				<a href="agenda.html">
+					<i class="fas fa-calendar-alt"></i>
+				</a>
+		
+				<a href="levelone.html">
+					<i class="fas fa-gamepad"></i>
+				</a>
+		
+				<a href="tools.html" class="activado">
+					<i class="fas fa-pencil-ruler"></i>
+				</a>
+		
+				<a href="mooney.html">
+					<i class="far fa-moon"></i>
+				</a>
+		
+				<a href="ajustes.html">
+					<i class="fas fa-cogs"></i>
+				</a>
+			</footer>
+		</div>
+	</div>
+
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.js" 
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+			crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+			crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+
+    <script type="text/javascript">
+
+    	//FAVICON URL------------------------------------------------------------------------------------------------
+		const img = document.querySelector('#favicon');
+		const input = document.querySelector('#favicon-input');
+
+		input.addEventListener('mouseover', () => {
+			const favicon = `https://favicons.githubusercontent.com/${input.value}`;
+			img.src = favicon;
+		});
+
+    	//QR CODE----------------------------------------------------------------------------------------------------
+    	const href = " ";
+		const size = 300;
+		const qr = new QRCode(document.querySelector('#qr-code'), {
+			text: href,
+			width: size,
+			height: size,
+			colorDark: "#487dd2",
+			colorLight: "#fff"
+			// colorLight: "#487dd2",
+			// colorDark: "#fff"
+		});
+
+    	//QR CODE GENERATOR------------------------------------------------------------------------------------------
+		function generateNewQR() {
+			const value = document.getElementById("favicon-input").value;
+			document.getElementById("qr-code").classList.add('qr-code-reveal');
+			qr.clear();
+			qr.makeCode(value);
+		}
+
+    	//OPEN URL--------------------------------------------------------------------------------------------------
+		$('#btn-url').click(function() {
+			window.open(input.value, '_blank');
+		});
+
+    </script>
+
+	<script type="text/javascript">
+
+		// Assistent
+		let micIcon = document.getElementById('micIcon');
+		let resultElement = document.getElementById('resultElement');
+		let SpeechRecognition, recognition;
+
+		let commands = [{
+
+			"command": "cerrar sesión",
+			"action": "openHTML",
+			"html": "index.html",
+
+		},{
+
+			"command": "volver",
+			"action": "openHTML",
+			"html": "inicio.html",
+
+		},{
+
+			"command": "mensajes",
+			"action": "openHTML",
+			"html": "mensajes.html",
+
+		},{
+
+			"command": "videollamada",
+			"action": "openHTML",
+			"html": "videollamada.html",
+
+		},{
+
+			"command": "lanzar",
+			"action": "openHTML",
+			"html": "subir.html",
+
+		},{
+
+			"command": "cámara",
+			"action": "openHTML",
+			"html": "foto.html",
+
+		},{
+
+			"command": "foto",
+			"action": "openHTML",
+			"html": "foto.html",
+
+		},{
+
+			"command": "video",
+			"action": "openHTML",
+			"html": "video.html",
+
+		},{
+
+			"command": "perfil",
+			"action": "openHTML",
+			"html": "perfil.html",
+
+		},{
+
+			"command": "código qr",
+			"action": "openHTML",
+			"html": "codigoqr.html",
+
+		},{
+
+			"command": "agenda",
+			"action": "openHTML",
+			"html": "agenda.html",
+
+		},{
+
+			"command": "calendario",
+			"action": "openHTML",
+			"html": "agenda.html",
+
+		},{
+
+			"command": "level one",
+			"action": "openHTML",
+			"html": "levelone.html",
+
+		},{
+
+			"command": "juegos",
+			"action": "openHTML",
+			"html": "levelone.html",
+
+		},{
+
+			"command": "dibujo",
+			"action": "openHTML",
+			"html": "paint.html",
+
+		},{
+
+			"command": "piedra, papel y tijeras",
+			"action": "openHTML",
+			"html": "piedra.html",
+
+		},{
+
+			"command": "tetris",
+			"action": "openHTML",
+			"html": "tetris.html",
+
+		},{
+
+			"command": "pong",
+			"action": "openHTML",
+			"html": "pong.html",
+
+		},{
+
+			"command": "breakout",
+			"action": "openHTML",
+			"html": "breakout.html",
+
+		},{
+
+			"command": "bomberman",
+			"action": "openHTML",
+			"html": "bomberman.html",
+
+		},{
+
+			"command": "snake",
+			"action": "openHTML",
+			"html": "snake.html",
+
+		},{
+
+			"command": "tres en raya",
+			"action": "openHTML",
+			"html": "raya.html",
+
+		},{
+
+			"command": "tools",
+			"action": "openHTML",
+			"html": "tools.html",
+
+		},{
+
+			"command": "herramientas",
+			"action": "openHTML",
+			"html": "tools.html",
+
+		},{
+
+			"command": "notas",
+			"action": "openHTML",
+			"html": "notas.html",
+
+		},{
+
+			"command": "calculadora",
+			"action": "openHTML",
+			"html": "calculadora.html",
+
+		},{
+
+			"command": "grabadora",
+			"action": "openHTML",
+			"html": "grabadora.html",
+
+		},{
+
+			"command": "cronómetro",
+			"action": "openHTML",
+			"html": "cronometro.html",
+
+		},{
+
+			"command": "linterna",
+			"action": "openHTML",
+			"html": "linterna.html",
+
+		},{
+
+			"command": "tareas",
+			"action": "openHTML",
+			"html": "tareas.html",
+
+		},{
+
+			"command": "traductor",
+			"action": "openHTML",
+			"html": "traductor.html",
+
+		},{
+
+			"command": "aleatorio",
+			"action": "openHTML",
+			"html": "aleatorio.html",
+
+		},{
+
+			"command": "url",
+			"action": "openHTML",
+			"html": "url.html",
+
+		},{
+
+			"command": "mooney",
+			"action": "openHTML",
+			"html": "mooney.html",
+
+		},{
+
+			"command": "ajustes",
+			"action": "openHTML",
+			"html": "ajustes.html",
+
+		}];
+
+		try {SpeechRecognition = window.SpeechRecognition ||
+			window.webkitSpeechRecognition;
+			recognition = new SpeechRecognition();
+			//set the lang
+			recognition.lang = 'es-SP';
+
+			//display the captured test
+			recognition.onresult = (event) => {
+				evaluateCommands(event.results[event.resultIndex][0].transcript);
+			}
+
+			//on start, toggle the mic color
+			recognition.onstart = () => {
+				micIcon.classList.add('active-mic');
+				resultElement.innerHTML = "Escuchando" + '<span>.</span><span>.</span><span>.</span>';
+			}
+			//turn the mic of at the end
+			recognition.onend = () => {
+				micIcon.classList.remove('active-mic');
+			}
+		} catch (e) {
+			resultElement.innerHTML = 'Tu navegador no soporta el asistente. Por favor, usa Chrome o Edge';
+			console.log('Tu navegador no soporta el asistente. Por favor, usa Chrome o Edge');
+			$('.micro-btn').hide();
+		}
+
+		function startSpeaking() {
+			recognition.start();
+		}
+
+		function evaluateCommands(compareWidth) {
+			commands.forEach(element => {
+				if (element.command.toLowerCase() == compareWidth.toLowerCase()) {
+					//command recognized
+					switch (element.action) {
+						case "openURL": window.open(element.url, '_blank');
+						break;
+						case "openHTML": window.open(element.html, '_self');
+						break;
+						case "zapping": $('.push').click();
+						break;
+					}		
+				}
+			});
+		}
+
+		$('.zapp-mic').hide();
+		$('.showMic').click(function () {
+			$('.zapp-mic').show();
+		});
+
+		$('.hideMic').click(function () {
+			$('.zapp-mic').hide();
+		});
+
+		// Zapping microphone
+		let recognitionZapping;
+		let commandsZapping = [{
+
+			"command": "zapping",
+			"action": "zapping"
+
+		}];
+		try {SpeechRecognition = window.SpeechRecognition ||
+			window.webkitSpeechRecognition;
+			recognitionZapping = new SpeechRecognition();
+			//set the lang
+			recognitionZapping.lang = 'es-SP';
+
+			//display the captured test
+			recognitionZapping.onresult = (event) => {
+				evaluateCommandsZapping(event.results[event.resultIndex][0].transcript);
+			}
+		} catch (e) {
+			$('.zapp-mic').hide();
+		}
+
+		function startSpeakingZapping() {
+			recognitionZapping.start();
+		}
+
+		function evaluateCommandsZapping(compareWidth) {
+			commandsZapping.forEach(element => {
+				if (element.command.toLowerCase() == compareWidth.toLowerCase()) {
+					switch (element.action) {
+						case "zapping": $('.push').click();
+						break;
+					}		
+				}
+			});
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara o Cruz</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2694fa">
+    <meta name="theme-color" content="#2694fa">
+    <script src="https://kit.fontawesome.com/81c2c05f29.js" crossorigin="anonymous"></script>
+    <meta name="description" 
+          content="SpiderWeb, lanza la moneda y elige cara o cruz">
+    <meta name="keywords"   
+          content="spiderweb, herramientas, digitales, virtuales, aplicaciones, herramientas digitales,
+		  		   herramientas virtuales, calculadora, contador, contraseña, cronometro, grabadora,
+				   paint, dibujo, trnascriptor, textos, voz, sonido, video, grabar video, descargar">
+</head>
+<body>
+    <header>
+        <a href="./index.html">
+            <h1 class="brand">
+                <img src="./img/logo1.png">
+                SpiderWeb
+            </h1>
+        </a>
+    </header>
+	<header class="nav">
+		<a href="./index.html">
+			<i class="fas fa-home"></i>
+			<p>Inicio</p>
+		</a>
+		
+		<a href="./calculadora.html">
+			<i class="fas fa-calculator"></i>
+			<p>Calculadora</p>
+		</a>
+
+		<a href="./cronometro.html">
+			<i class="fas fa-stopwatch"></i>
+			<p>Cronómetro</p>
+		</a>
+
+		<a href="./contraseña.html">
+			<i class="fas fa-unlock"></i>
+			<p>Contraseña</p>
+		</a>
+
+		<a href="./grabadora.html">
+			<i class="fas fa-headset"></i>
+			<p>Grabadora</p>
+		</a>
+
+		<a href="./video.html">
+			<i class="fas fa-video"></i>
+			<p>Vídeo</p>
+		</a>
+
+		<a href="./paint.html">
+			<i class="fas fa-paint-brush"></i>
+			<p>Paint</p>
+		</a>
+
+		<a href="./transcriptor.html">
+			<i class="far fa-file-audio"></i>
+			<p>Transcriptor</p>
+		</a>
+
+		<a href="./contador.html">
+			<i class="far fa-clock"></i>
+			<p>Contador</p>
+		</a>
+
+		<a href="./musica.html">
+			<i class="fas fa-music"></i>
+			<p>Música</p>
+		</a>
+
+		<a href="./dados.html">
+			<i class="fas fa-dice"></i>
+			<p>Dados</p>
+		</a>
+
+		<a href="./cara-cruz.html">
+			<i class="fas fa-coins"></i>
+			<p>Cara-Cruz</p>
+		</a>
+
+		<a href="./ruleta.html">
+			<i class="far fa-circle"></i>
+			<p>Ruleta</p>
+		</a>
+	</header>
+    <div class="container">
+        <div class="row flex j-center a-center">
+            <div class="col-75">
+                <div class="card cards">
+					<h3>Cara o Cruz</h3>
+					<p>Primero elige cara o cruz y luego pulsa sobre lanzar para sacar el resultado</p>
+					<div class="flex j-center a-center">
+                        <img src="img/coin1.png" 
+                             alt="Moneda" 
+                             title="Cara o cruz" 
+                             id="coin">
+                    </div>
+                    <button id="btn-coin" 
+                            onclick="launch()">
+                        Lanzar
+                    </button>
+                </div>
+            </div>
+        </div>
+	</div>
+	<footer>
+		<a href="./index.html">
+			<i class="fas fa-home"></i>
+		</a>
+
+		<a href="./calculadora.html">
+			<i class="fas fa-calculator"></i>
+		</a>
+
+		<a href="./cronometro.html">
+			<i class="fas fa-stopwatch"></i>
+		</a>
+
+		<a href="./contraseña.html">
+			<i class="fas fa-unlock"></i>
+		</a>
+
+		<a href="./grabadora.html">
+			<i class="fas fa-headset"></i>
+		</a>
+
+		<a href="./video.html">
+			<i class="fas fa-video"></i>
+		</a>
+
+		<a href="./paint.html">
+			<i class="fas fa-paint-brush"></i>
+		</a>
+
+		<a href="./transcriptor.html">
+			<i class="far fa-file-audio"></i>
+		</a>
+
+		<a href="./contador.html">
+			<i class="far fa-clock"></i>
+		</a>
+
+		<a href="./musica.html">
+			<i class="fas fa-music"></i>
+		</a>
+
+		<a href="./dados.html">
+			<i class="fas fa-dice"></i>
+		</a>
+
+		<a href="./cara-cruz.html" class="active">
+			<i class="fas fa-coins"></i>
+		</a>
+
+		<a href="./ruleta.html">
+			<i class="far fa-circle"></i>
+		</a>
+	</footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>

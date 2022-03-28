@@ -1,0 +1,1066 @@
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*                                                  SpiderWeb Styles                                                         */
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+
+/* Generals */
+html {
+    font-size: 22px;
+}
+
+@media (max-width: 960px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+button, 
+button:focus, 
+button:active,
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'calibri', sans-serif;
+    /* background: #153365; */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.brand {
+    /* font-family: 'Caveat', cursive; */
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.5rem;
+    color: #2694fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    /* font-family: 'Caveat', cursive; */
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.4rem;
+    color: #50a9fb;
+    text-align: center;
+    padding: 0.5rem 1rem 0 1rem;
+}
+
+h4 {
+    font-size: 1rem;
+    color: #00a2e8;
+    text-align: center;
+    padding: 0.7rem 1rem;
+}
+
+h5 {
+    width: 2rem;
+    height: 1.5rem;
+    position: absolute;
+    border-radius: 0.2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+    background-color: #00a2e8;
+    color: #fff;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms all ease-in-out;
+}
+
+footer .brand {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Buttons */
+button {
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-family: 'calibri', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: #50a9fb;
+    cursor: pointer;
+    transition: 500ms all ease-in-out;
+}
+
+button:hover {
+    background-color: #007ff4;
+    color: #fff;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.float {
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    background: #fff;
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
+    color: #50a9fb;
+    text-align: center;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Containers */
+.container {
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.col-100 {
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.col-75 {
+    width: 75%;
+    padding: 0.5rem 1rem;
+}
+
+.col-66 {
+    width: 66.6666%;
+    padding: 0.5rem 1rem;
+}
+
+.col-50 {
+    width: 50%;
+    padding: 0.5rem 1rem;
+}
+
+.col-33 {
+    width: 33.3333%;
+    padding: 0.5rem 1rem;
+}
+
+.col-25 {
+    width: 25%;
+    padding: 0.5rem 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.j-start {
+    justify-content: flex-start;
+}
+
+.j-end {
+    justify-content: flex-end;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+.j-around {
+    justify-content: space-around;
+}
+
+.a-start {
+    align-items: flex-start;
+}
+
+.a-end {
+    align-items: flex-end;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.mt {
+    margin-top: 1rem;
+}
+
+.mb {
+    margin-bottom: 1rem;
+}
+
+.ml {
+    margin-left: 1rem;
+}
+
+.mr {
+    margin-right: 1rem;
+}
+
+.mt-small {
+    margin-top: 0.5rem;
+}
+
+.mb-small {
+    margin-bottom: 0.5rem;
+}
+
+.ml-small {
+    margin-left: 0.5rem;
+}
+
+.mr-small {
+    margin-right: 0.5rem;
+}
+
+label {
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+}
+
+.overflow {
+    overflow-y: auto;
+}
+
+
+/* Header */
+header {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    transition: 500ms all ease-in-out;
+}
+
+header i {
+    font-size: 1.8rem;
+    color: lightslategray;
+}
+
+header p {
+    font-size: 0.8rem;
+    margin: 0.5rem auto;
+    color: #50a9fb;
+    text-align: center;
+    font-weight: 700;
+    display: block;
+}
+
+/* Inputs */
+input[type="text"] {
+    width: 50%;
+    color: #000;
+    padding: 0.2rem 1rem;
+    margin: 1rem auto;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #50a9fb;
+}
+
+select {
+    -webkit-appearance: none;
+    width: 70%!important;
+    font-size: 0.7rem!important;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    background-image: 
+        linear-gradient(
+            45deg,  transparent 50%, #50a9fb 50%, #50a9fb calc(50% + 1px), transparent calc(50% + 2px)
+        ), 
+        linear-gradient(
+            -45deg, transparent 50%, #50a9fb 50%, #50a9fb calc(50% + 1px), transparent calc(50% + 2px)
+        );
+    background-repeat: no-repeat;
+    background-position: 
+        right 23px  top calc(1em), 
+        right 15px  top calc(1em);
+    background-size: 8px 8px;
+    background-repeat: no-repeat;
+    transition: 500ms all ease-in;
+}
+
+textarea {
+    width: 100%;
+    min-height: 400px;
+    font-family: 'calibri', sans-serif;
+    color: #000;
+    font-weight: 600;
+    padding: 0.2rem 1rem;
+    margin: 1rem auto;
+    font-size: 1rem;
+    text-align: center;
+    border: 2px solid #50a9fb;
+    border-radius: 0.5rem;
+    resize: none;
+}
+
+input[type="button"] {
+    width: 40%;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-family: 'calibri', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: #50a9fb;
+    cursor: pointer;
+    transition: 500ms all ease-in-out;
+} 
+
+input[type="time"] {
+    width: 50%;
+    border: 2px solid #50a9fb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input[type="color"] {
+    width: 50%!important;
+    background-color: #fff;
+    border: 2px solid #50a9fb;
+}
+
+
+/* Pages */
+.bg {
+    background-color: #fff;
+}
+
+.bg h3 {
+    color: #00a2e8;
+    margin: 1rem auto;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.bg p {
+    color: lightslategray;
+    text-align: justify;
+    font-weight: 600;
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: 500ms all ease-in-out;
+}
+
+.cards {
+    margin: 0 0 3rem 0;
+}
+
+.card h3 {
+    color: lightslategray;
+    margin: 0.5rem;
+}
+
+.card i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: lightslategray;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    color: #00a2e8;
+    text-align: center;
+    font-weight: 700;
+}
+
+.intro p {
+    text-align: center;
+    font-weight: 600;
+    color: lightslategray;
+    margin: 0 auto;
+}
+
+.cryptos {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.ether {
+    width: 160px;
+    margin: 0 auto;
+}
+
+a .card:hover{
+    transform: scale(1.05);
+}
+
+.record i {
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.grabar,
+#cronometro {
+    width: 70%;
+    margin: 1rem auto;
+    padding: 1rem; 
+    border: solid 3px #50a9fb; 
+    border-radius: 1rem;
+    text-align: center 
+}
+
+#reloj {
+    background-color: lightslategray;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem auto;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+#cronometro form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#timer {
+    width: 100%; 
+    color: lightslategray;
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 1rem auto;
+}
+
+.calculator {
+    width: 100%;
+}
+
+#result-calc {
+    background-color: lightslategray; 
+    height: 120px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#history-calc, 
+#output-calc {
+    font-size: 4.5rem; 
+    color: #fff; 
+    font-weight: 600;
+}
+
+.keyboard button {
+    width: 25%;
+    height: 100px;
+    background-color: #50a9fb;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    outline: none;
+    margin: 0.1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard button i {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.keyboard button:active {
+    transform: scale(0.95);
+}
+
+.keyboard div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#config {
+    width: 300px;
+    height: auto;
+    position: fixed;
+    top: 200px;
+    left: 3%;
+    background-color: #fff;
+    right: 20px;
+    z-index: 3;
+    overflow: hidden;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#config button {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top {
+    width: 100%;
+    background-color: #50a9fb;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.2rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0;
+    cursor: grab!important;
+}
+
+#config ul li {
+    padding: 0.5rem 1rem;
+    list-style-type: none;
+}
+
+#config ul li p {
+    text-align: center;
+}
+
+video {
+    position: fixed; 
+    z-index: -1!important; 
+    right: 0; 
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.visualizer {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 4px;
+    width: 100%;
+    height: 200px;
+}
+
+#eq {
+    width: 100%;
+}
+
+.bar {
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        #50a9fb 0%,
+        #50a9fb 26px,
+        #50a9fb 26px,
+        #50a9fb 30px
+    );
+    align-self: end;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card .controls button,
+.card .controls i {
+    font-size: 2rem;
+    background: none;
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    background: none;
+}
+
+.progress::-moz-range-progress {
+    background: #50a9fb;
+    height: 10px;
+}
+
+#btn-music {
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-family: 'calibri', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: #50a9fb;
+    cursor: pointer;
+    transition: 500ms all ease-in-out;
+}
+
+#upload {
+    width: 100px;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#dado1, 
+#dado2,
+#coin {
+    width: 200px;
+    margin: 0 1rem;
+}
+
+#dado2 {
+    display: none;
+}
+
+#btn-dado1, 
+#btn-dado2, 
+#btn-coin { 
+    width: 200px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background: #21d4fd;
+    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+}
+
+.roulette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ruleta {
+    width: 500px;
+    height: 500px;
+    background: #ccc;
+    border-radius: 50%;
+    border: 15px solid #dde;
+    position: relative;
+    overflow: hidden;
+    transition: transform 5s;
+}
+
+.ruleta div {
+    height: 50%;
+    width: 200px;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    left: 135px;
+    padding: 1.1rem;
+}
+
+.ruleta .one {
+    background-color: #3f51b5;
+    left: 50%;
+}
+
+.ruleta .two {
+    background-color: #ff9800;
+    transform: rotate(45deg);
+}
+
+.ruleta .three {
+    background-color: #e91e63;
+    transform: rotate(90deg);
+}
+
+.ruleta .four {
+    background-color: #4caf50;
+    transform: rotate(135deg);
+}
+
+.ruleta .five {
+    background-color: #009688;
+    transform: rotate(180deg);
+}
+
+.ruleta .six {
+    background-color: #795548;
+    transform: rotate(225deg);
+}
+
+.ruleta .seven {
+    background-color: #9c27b0;
+    transform: rotate(270deg);
+}
+
+.ruleta .eight {
+    background-color: #f44336;
+    transform: rotate(315deg);
+}
+
+#spin {
+    position: absolute;
+    z-index: 1;
+    background-color: #e2e2e2;
+    border: solid 8px #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #a2a2a3;
+    cursor: pointer;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 0;
+    background-color: #50a9fb;
+    z-index: 3;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer a {
+    color: #fff;
+    opacity: 0.7;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+}
+
+footer a.active {
+    opacity: 1;
+}
+
+.footer {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: lightslategray;
+    color: #fff;
+    text-align: center;
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms all ease-in-out;
+}
+
+.footer-buttons {
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 4rem;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    header p {
+        display: none;
+    }
+
+    input[type="text"] {
+        width: 70%;
+    }
+
+    .cryptos {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+    }
+
+    .col-75,
+    .col-66,
+    .col-50,
+    .col-33,
+    .col-25 {
+        width: 100%;
+    }
+
+    .col-md {
+        width: 50%;
+    }
+
+    .flex-row {
+        flex-direction: row;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+    }
+
+    .grabar,
+    #cronometro {
+        width: 100%;
+    }
+
+    .hero {
+        max-height: 500px;
+    }
+
+    #result-calc {
+        height: 100px;  
+    }
+
+    #history-calc, 
+    #output-calc {
+        font-size: 3rem; 
+    }
+
+    .keyboard button,
+    .keyboard button i {
+        font-size: 2rem;
+        height: 60px;
+    }
+
+    .controls {
+        padding: 0 0.5rem;
+    }
+
+    .cryptos p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 590px) {
+    .ruleta {
+        width: 400px;
+        height: 400px;
+    }
+
+    .ruleta div {
+        width: 156px;
+        left: 108px;
+    }
+
+    #spin {
+        width: 4rem;
+        height: 4rem;
+        border: none;
+    }
+
+    input[type="text"] {
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    #config {
+        width: 45%;
+    }
+
+    .card .controls button,
+    .card .controls i {
+        font-size: 1.3rem;
+    }
+
+    #dado1, 
+    #dado2 {
+        width: 100px;
+    }
+    
+    #coin {
+        width: 120px;
+    }
+
+    #btn-dado1, 
+    #btn-dado2, 
+    #btn-coin {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ruleta {
+        width: 335px;
+        height: 335px;
+    }
+
+    .ruleta div {
+        width: 128px;
+        font-size: 0.8rem;
+        left: 88px;
+    }
+
+    #spin {
+        font-size: 0.9rem;
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .ruleta {
+        width: 275px;
+        height: 275px;
+    }
+
+    .ruleta div {
+        width: 100px;
+        font-size: 0.7rem;
+        left: 72px;
+    }
+
+    #spin {
+        font-size: 0.8rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    footer {
+        height: 40px;
+    }
+
+    footer a {
+        font-size: 1.1rem;
+    }
+
+    .cryptos p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        padding: 0.5rem;
+    }
+
+    .ruleta {
+        width: 250px;
+        height: 250px;
+    }
+
+    .ruleta div {
+        width: 90px;
+        font-size: 0.5rem;
+        left: 65px;
+    }
+
+    #spin {
+        font-size: 0.6rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    footer a {
+        font-size: 1rem;
+    }
+
+    .card .controls button,
+    .card .controls i {
+        font-size: 1rem;
+    }
+}
